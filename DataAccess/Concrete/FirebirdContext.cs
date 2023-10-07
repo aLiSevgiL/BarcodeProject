@@ -19,9 +19,21 @@ namespace DataAccess.Concrete
             optionsBuilder.UseFirebird(firebirdConnectionString);
         }
 
+        public DbSet<ProductBarcod> PRODUCTBARCODS { get; set; }
 
 
+/*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductBarcod>().ToTable("PsKaliteKontrol");
 
+            modelBuilder.Entity<ProductBarcod>()
+                .Property(b => b.BarcodStr).HasColumnName("BarkodId");
+
+     
+        }
+
+*/
 
 
 

@@ -11,7 +11,7 @@ namespace Business.Abstract
     public interface IBarcodService
     {
       
-        IDataResult<ProductBarcod> CheckStatusByBarcode(string barcode);
+        string CheckStatusByBarcode(string barcode);
         IResult AddShipmentDocumentBarcod(ProductBarcod productbarcod);
         IDataResult<List<ProductBarcod>> GetAll();
     }

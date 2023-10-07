@@ -13,5 +13,7 @@ namespace DataAccess.Abstract
         void CallPARTISTOKBARKODILESEVKETProcedure(string barcode);
 
 
+
+
     }
 }

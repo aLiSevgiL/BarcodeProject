@@ -42,21 +42,19 @@ namespace WebAPI.Controllers
 
 
 
-        [HttpGet("getall")]
-        public IActionResult Get()
+        [HttpGet("checkstatusbarcod")]
+        public IActionResult Get(string barcode)
         {
-            var result = _barcodService.GetAll();
+            var result = _barcodService.CheckStatusByBarcode(barcode);
 
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest();
-            }
 
+            return Ok(result);
+           
         }
+
+
+
+
 
 
 

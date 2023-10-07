@@ -38,14 +38,21 @@ namespace Business.Concrete
 
         }
 
-        public IDataResult<ProductBarcod> CheckStatusByBarcode(string barcode)
+        public string CheckStatusByBarcode(string barcode)
         {
-            throw new NotImplementedException();
+
+            var barcodItem = (_barcodDal.Get(p => p.BarcodStr == barcode));
+
+            string status = barcodItem != null ? "Barkod Veritabanında Bulundu" : "Barkod Bulunamadı";
+
+            return status;
+
+
         }
 
         public IDataResult<List<ProductBarcod>> GetAll()
         {
-           return new SuccessDataResult<List<ProductBarcod>>(_barcodDal.GetAll());
+            throw new NotImplementedException();
         }
     }
 }
