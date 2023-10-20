@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StackExchange.Redis;
+using Business.Infrastructure.Cache.Redis;
 
 namespace WebAPI
 {
@@ -37,6 +39,10 @@ namespace WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
             });
+
+
+            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(Configuration["RedisConfiguration"]));
+            services.AddTransient<IRedisService, RedisManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
